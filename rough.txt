@@ -199,4 +199,55 @@ int main() {
 }
 
    
----------------------------------------
+------------------------------------------------------
+No of Days
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main() {
+    char date_str[11]; // string to store the input date (DD/MM/YYYY)
+    int day, month, year, days_elapsed = 0;
+    
+    // get the input date from the user
+    printf("Enter the date in DD/MM/YYYY format: ");
+    scanf("%s", date_str);
+    
+    // extract the day, month, and year from the input date string
+    sscanf(date_str, "%d/%d/%d", &day, &month, &year);
+    
+    // add the number of days for each month from the start of the year until the input date
+    for (int i = 1; i < month; i++) {
+        switch(i) {
+            case 2:
+                // February (28 days)
+                if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+                    // leap year (29 days)
+                    days_elapsed += 29;
+                } else {
+                    days_elapsed += 28;
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                // April, June, September, November (30 days)
+                days_elapsed += 30;
+                break;
+            default:
+                // January, March, May, July, August, October, December (31 days)
+                days_elapsed += 31;
+                break;
+        }
+    }
+    
+    // add the remaining days in the input date
+    days_elapsed += day;
+    
+    // output the number of days elapsed
+    printf("The number of days elapsed from 01/01/%d to %s is %d.", year, date_str, days_elapsed);
+    
+    return 0;
+}
+--------------------------------------------------------------
