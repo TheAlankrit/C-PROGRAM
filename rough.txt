@@ -155,3 +155,31 @@ int lcm(int a, int b) {
     return lcm;
 }
 ----------------------------------------------------------------
+LINEAR SEARCH
+#include <stdio.h>
+
+int linearSearch(int arr[], int n, int x) {
+    int i;
+    for (i = 0; i < n; i++) {
+        if (arr[i] == x) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    int arr[] = {3, 6, 9, 12, 15, 18};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int x = 12;
+    int index = linearSearch(arr, n, x);
+    if (index == -1) {
+        printf("%d not found\n", x);
+    } else {
+        printf("%d found at index %d\n", x, index);
+    }
+    return 0;
+}
+-------------------------------------------------
+   
+---------------------------------------
