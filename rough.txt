@@ -1,0 +1,157 @@
+#include <stdio.h>
+
+int main() {
+    int decimal, binary = 0, i = 1;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    // Convert decimal to binary
+    while (decimal > 0) {
+        binary += (decimal % 2) * i;
+        decimal /= 2;
+        i *= 10;
+    }
+
+    printf("Binary equivalent: %d\n", binary);
+
+    return 0;
+}
+----------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int decimal, octal = 0, i = 1;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    // Convert decimal to octal
+    while (decimal > 0) {
+        octal += (decimal % 8) * i;
+        decimal /= 8;
+        i *= 10;
+    }
+
+    printf("Octal equivalent: %d\n", octal);
+
+    return 0;
+}
+--------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int decimal, remainder, i = 0;
+    char hexadecimal[20];
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    // Convert decimal to hexadecimal
+    while (decimal > 0) {
+        remainder = decimal % 16;
+        if (remainder < 10) {
+            hexadecimal[i++] = remainder + 48;
+        } else {
+            hexadecimal[i++] = remainder + 55;
+        }
+        decimal /= 16;
+    }
+
+    // Reverse the hexadecimal string
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%c", hexadecimal[j]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
+-------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char binary[] = "1010101";
+    int length = strlen(binary);
+    int decimal = 0;
+    int base = 1;
+    for (int i = length - 1; i >= 0; i--) {
+        if (binary[i] == '1') {
+            decimal += base;
+        }
+        base *= 2;
+    }
+    printf("Binary: %s -> Decimal: %d\n", binary, decimal);
+    return 0;
+}
+----------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char *hex = "FF";
+    char *endptr;
+    long decimal = strtol(hex, &endptr, 16);
+    printf("Hexadecimal: %s -> Decimal: %ld\n", hex, decimal);
+    return 0;
+}
+-------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char *octal = "55";
+    char *endptr;
+    long decimal = strtol(octal, &endptr, 8);
+    printf("Octal: %s -> Decimal: %ld\n", octal, decimal);
+    return 0;
+}
+-------------------------------------------------
+digital root code
+#include <stdio.h>
+
+int digital_root(int num) {
+    int sum = 0;
+
+    // Compute the sum of digits
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+
+    // If the sum has more than one digit, recursively compute the digital root
+    if (sum > 9) {
+        return digital_root(sum);
+    }
+
+    // Otherwise, the sum is the digital root
+    return sum;
+}
+
+int main() {
+    int num;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+    // Compute the digital root of the number
+    int root = digital_root(num);
+
+    printf("The digital root of %d is %d\n", num, root);
+
+    return 0;
+}
+-----------------------------------------------------------------
+lcm
+int lcm(int a, int b) {
+    int max = (a > b) ? a : b;
+    int lcm = max;
+
+    while ((lcm % a != 0) || (lcm % b != 0)) {
+        lcm += max;
+    }
+
+    return lcm;
+}
+----------------------------------------------------------------
