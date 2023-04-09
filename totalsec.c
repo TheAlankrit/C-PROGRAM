@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-unsigned long comp(char *timeStr) {
+ long comp(char *timeStr) {
     char *ti;
     unsigned long hh, mm, ss;
     ti = strtok(timeStr, ":");

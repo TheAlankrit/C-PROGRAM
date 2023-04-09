@@ -1,18 +1,19 @@
 #include <stdio.h>
 
-int main() {
 
-    int n1, n2, i, gcd, lcm;
+int lcm(int a, int b) {
+    int max = (a > b) ? a : b;
+    int lcm = max;
 
-    printf("Enter two integers");
-    scanf("%d %d", &n1, &n2);
-    for (i = 1; i <= n1 && i <= n2; ++i) {
-        if (n1 % i == 0 && n2 % i == 0)
-            gcd = i;
+    while ((lcm % a != 0) || (lcm % b != 0)) {
+        lcm += max;
     }
 
-    lcm = (n1 * n2) / gcd;
-
-    printf("The LCM of two numbers %d and %d is %d.", n1, n2, lcm);
-    return 0;
+    return lcm;
+}
+int main(){
+int a,b;
+printf("enter two num");
+scanf("%d %d",&a,&b);
+printf("%d",lcm(a,b));
 }
