@@ -1,0 +1,51 @@
+Commands
+ls: List the files and directories in the current directory
+cd: Change the current working directory
+pwd: Print the current working directory
+mkdir: Create a new directory
+rmdir: Remove a directory (only works if it's empty)
+touch: Create a new empty file or update the modification time of an existing file
+rm: Remove a file or directory
+cp: Copy a file or directory
+mv: Move or rename a file or directory
+cat: Display the contents of a file
+grep: Search for a pattern in a file
+chmod: Change the permissions of a file or directory
+chown: Change the owner of a file or directory
+ps: List the currently running processes
+kill: Terminate a process
+sudo: Run a command with superuser (root) privileges
+--------------------------------------------------------------------------------------------------------------
+ls: List the files and directories in the current directory
+ls -l: List files and directories in long format, which includes permissions, owner, group, size, and modification time
+ls -a: List all files and directories, including hidden files and directories that start with a dot (.)
+ls -h: List files and directories in human-readable format, which displays file sizes in a more readable format (e.g. KB, MB, GB)
+ls -t: List files and directories sorted by modification time, with the most recently modified files and directories listed first
+ls -r: List files and directories in reverse order, which can be useful for finding the most recently modified files and directories at the end of a long list
+ls -R: List files and directories recursively, which includes all files and directories in subdirectories
+ls -i: List files and directories with their inode number, which is a unique identifier for each file or directory
+ls -G: List files and directories in color-coded format, which makes it easier to distinguish between different types of files and directories
+-------------------------------------------------------------------------------------------------------------------
+rm file: Remove a file
+rm -r directory: Remove a directory and its contents recursively
+rm -f file: Remove a file without prompting for confirmation
+rm -rf directory: Remove a directory and its contents recursively without prompting for confirmation (use with caution as it can permanently delete data)
+rm -i file: Prompt for confirmation before removing a file
+rm -v file: Show verbose output while removing a file, which displays the name of each file as it is removed
+rm --preserve-root file: Prevent the root directory from being deleted (useful to prevent accidental deletion of the entire system)
+-------------------------------------------------------------------------------------------------------------------
+cd directory: Change the current working directory to directory
+cd ..: Move up one directory level
+cd ~: Change the current working directory to the home directory of the current user
+cd /: Change the current working directory to the root directory
+cd -: Change the current working directory to the previous directory
+----------------------------------------------------------------------------------------------------------
+rmdir directory: Remove an empty directory
+rmdir -p directory/subdirectory: Remove a directory and its parent directories, if they are empty
+rmdir -v directory: Show verbose output while removing a directory, which displays the name of each directory as it is removed
+mkdir:
+
+mkdir directory: Create a new directory
+mkdir -p directory/subdirectory: Create a directory and its parent directories, if they don't exist already
+mkdir -v directory: Show verbose output while creating a directory, which displays the name of each directory as it is created
+---------------------------------------------------------------------------------------------
