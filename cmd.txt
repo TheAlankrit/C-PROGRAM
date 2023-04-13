@@ -49,3 +49,35 @@ mkdir directory: Create a new directory
 mkdir -p directory/subdirectory: Create a directory and its parent directories, if they don't exist already
 mkdir -v directory: Show verbose output while creating a directory, which displays the name of each directory as it is created
 ---------------------------------------------------------------------------------------------
+cp
+-r - copies directories recursively
+-i - prompts before overwriting existing files
+-v - verbose output, showing the name of each file as it is copied
+-u - copies only files that are newer than the corresponding files in the destination directory
+-p - preserves the permissions and timestamps of the copied files
+-f - forces the copy, overriding any prompts or warnings
+-----------------------------------------------------------------------
+mv
+-f - forces the move, overriding any prompts or warnings
+-i - prompts before overwriting existing files
+-v - verbose output, showing the name of each file as it is moved
+-u - moves only files that are newer than the corresponding files in the destination directory
+-p - preserves the permissions and timestamps of the moved files
+------------------------------------------------------------------------
+vi editor
+i - Enter insert mode to start inserting text at the current cursor position.
+Esc - Exit insert mode and return to command mode.
+:w - Write the file to disk (save).
+:q - Quit the editor.
+:wq - Write the file to disk and quit the editor (save and exit).
+:q! - Quit the editor without saving changes.
+:x - Write the file to disk and exit the editor.
+yy - Yank (copy) the current line to the clipboard.
+p - Paste the clipboard contents at the current cursor position.
+dd - Delete the current line.
+u - Undo the last change.
+Ctrl + r - Redo the last change.
+:set nu - Display line numbers.
+/search-term - Search for a specific term in the file.
+:s/search-term/replace-term/g - Replace all occurrences of a term with another term.
+----------------------------------------------------------------
