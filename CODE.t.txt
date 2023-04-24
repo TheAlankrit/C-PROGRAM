@@ -1,0 +1,180 @@
+package com.javamodulepractice;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+
+public class Question_Of_String {
+    public static String reverseString(String str) {
+        char ch[] = str.toCharArray();
+        String rev = "";
+        for (int i = ch.length - 1; i >= 0; i--) {
+            rev += ch[i];
+        }
+        return rev;
+    }
+
+
+    public static String reverseString2(String str) {
+        StringBuilder sb = new StringBuilder(str);
+        sb.reverse();
+        return sb.toString();
+    }
+
+
+    public static boolean isPalindrome(String str) {
+        StringBuilder sb = new StringBuilder(str);
+        sb.reverse();
+        String rev = sb.toString();
+        if (str.equals(rev)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public static String reverseWord(String str) {
+        String words[] = str.split("\\s");
+        String reverseWord = "";
+        for (String w : words) {
+            StringBuilder sb = new StringBuilder(w);
+            sb.reverse();
+            reverseWord += sb.toString() + " ";
+        }
+        return reverseWord;
+    }
+
+
+    public static String capitalizeWord(String str) {
+        /////////////CAPITALIZE EACH FIRST LETTER OF WORD IN SENTENCES///////////////
+        String words[] = str.split("\\s");
+        String capitalizeWord = "";
+        for (String w : words) {
+            String first = w.substring(0, 1);
+            String afterfirst = w.substring(1);
+            capitalizeWord += first.toUpperCase() + afterfirst + " ";
+        }
+        return capitalizeWord;
+        /////////////////////////////////
+        ////////TOOGLE EACH WORD OF SENTENCE OF FIRST LETTER/////////////
+
+        /////////////////////////////////////////////////////////
+    }
+    public static String Toggleeachword(String str){
+    String words[] = str.split("\\s");
+    String toggle = "";
+        for(String w:words)
+
+    {
+        String first = w.substring(0, 1);
+        String afterfirst = w.substring(1);
+        toggle += first.toLowerCase() + afterfirst.toUpperCase() + " ";
+    }
+        return toggle.trim();
+}
+
+
+    public static String reverseToggle(String str){
+        String words[]=str.split("\\s");
+        String reverseToggle="";
+        for(String w:words){
+            StringBuilder sb=new StringBuilder(w);
+            sb.reverse();
+            String first=sb.substring(0,1);
+            String afterfirst=sb.substring(1);
+            reverseToggle+=first.toLowerCase()+afterfirst.toUpperCase()+" ";
+        }
+        return reverseToggle;
+    }
+
+
+
+    static int wordcount(String string){
+        String[] words = string.split("\\s+"); // split by one or more whitespace characters
+        int wordCount = words.length-1;
+         return wordCount;
+    }
+
+
+
+    public static boolean checkRotation(String st1, String st2) {
+        if (st1.length() != st2.length()) {
+            return false;
+        }
+        String st3 = st1 + st1;
+        if (st3.contains(st2))
+            return true;
+        else
+            return false;
+    }
+
+
+    public static void findDuplicates(String str) {
+        char[] chars = str.toCharArray();
+        Arrays.sort(chars);
+
+        for (int i = 1; i < chars.length; i++) {
+            if (chars[i] == chars[i-1]) {
+                System.out.println("Duplicate character: " + chars[i]);
+            }
+        }
+    }
+
+    public static String charRemoveAt(String str, int p) {
+        return str.substring(0, p) + str.substring(p + 1);
+    }
+
+    public static String test(String[] str_arra) {
+        for (int i = 0; i < str_arra.length-1; i++) {
+            if (str_arra[i+1].charAt(0) - str_arra[i].charAt(0) > 1) {
+                String result_char = "" +	(char)((int)str_arra[i].charAt(0)+1);
+                return result_char;
+            }
+        }
+        return "";
+    }
+
+
+
+
+    public static void main(String[] args) throws ParseException {
+
+//        System.out.println(reverseString("my name is khan"));
+//        System.out.println(reverseString2("I am sonoo jaiswal"));
+//        System.out.println(isPalindrome("nitin"));
+//        System.out.println(reverseWord("my name is khan"));
+//        System.out.println(capitalizeWord("my name is khan"));
+//        System.out.println(reverseToggle("my name is khan"));
+//        String s="200";
+//         //Converting String into int using Integer.parseInt()
+//        int i=Integer.parseInt(s);
+//        System.out.println(s+100);//200100, because "200"+100, here + is a string concatenation operator
+//        System.out.println(i+100);//300, because 200+100, here + is a binary plus operator
+//        String sDate1="31/12/1998";
+//        Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
+//        System.out.println(sDate1+"\t"+date1);
+//        String string ="    India Is My Country";
+//        System.out.println(wordcount(string) + " words.");
+
+        char i='u';
+        int c=i;
+
+        System.out.println(c);
+
+//        String a = "Love";
+//        String b = "You";
+//        System.out.println("Before swap: " + a + " " + b);
+//        a = a + b;
+//        System.out.println(a);
+//        b = a.substring(0, a.length() - b.length());
+//        a = a.substring(b.length());
+//        System.out.println("After : " + a + " " + b);
+//
+//        String str = "India is my country";
+//        System.out.println(charRemoveAt(str, 7));
+
+    }
+
+}
